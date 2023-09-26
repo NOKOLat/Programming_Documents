@@ -41,7 +41,7 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           # デプロイ元リポジトリーとデプロイ先が異なる場合、
           # external_repository を指定します。
-          external_repository: NOKOLat/NOKOLat/PROGRAMM_DOCS_DEPLOY
+          external_repository: NOKOLat/NOKOLat/PROGRAM_DOCS_DEPLOY
           # publish_branch を指定しない場合、
           # gh-pages ブランチにデプロイされます。
           # publish_branch: master
