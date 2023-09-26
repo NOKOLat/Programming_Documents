@@ -1,0 +1,40 @@
+site_name: Programming Documents
+copyright: Copyright &copy; 2023 東京農工大学　航空研究会(NokoLAT)
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+          icon: material/toggle-switch
+          name: disable dark mode
+    - scheme: default
+      toggle:
+          icon: material/toggle-switch-off-outline
+          name: enable dark mode
+    
+  features:
+    - navigation.top
+    - content.code.annotate
+  
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/tuatbm
+      name: NokoLAT on Twitter 
+
+
+plugins:
+  - search
+  - git-revision-date-localized
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      auto_title: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
