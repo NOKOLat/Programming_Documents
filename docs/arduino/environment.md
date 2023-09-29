@@ -1,4 +1,4 @@
-# 環境構築
+# 1. 環境構築
 Arduino webページを参照してください  
 [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
 

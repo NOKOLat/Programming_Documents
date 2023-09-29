@@ -50,5 +50,6 @@ extra_css:
 nav:
 - TOP: index.md
 - Arduino:
-  - 環境構築: arduino/environment.md
-  - Lチカ: arduino/LED_Brink.md
+  - 1. 環境構築: arduino/environment.md
+  - 2. Lチカ: arduino/LED_Brink.md
+  - 3. UART通信(serial): arduino/serial.md
