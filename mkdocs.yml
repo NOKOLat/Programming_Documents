@@ -1,4 +1,5 @@
 site_name: Programming Documents
+repo_url: https://github.com/NOKOLat/PROGRAM_DOCS
 copyright: Copyright &copy; 2023 東京農工大学　航空研究会(NokoLAT)
 
 theme:
@@ -31,10 +32,23 @@ plugins:
   - git-revision-date-localized
 
 markdown_extensions:
+  - codehilite
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight:
       auto_title: true
+      pygments_lang_class: true
+      anchor_linenums: true
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+  - javascripts/config.js
+extra_css:
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
+
+nav:
+- TOP: index.md
+- Arduino:
+  - 環境構築: arduino/environment.md
+  - Lチカ: arduino/LED_Brink.md
