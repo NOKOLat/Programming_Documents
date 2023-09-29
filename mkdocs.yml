@@ -53,3 +53,4 @@ nav:
   - 1. 環境構築: arduino/environment.md
   - 2. Lチカ: arduino/LED_Brink.md
   - 3. UART通信(serial): arduino/serial.md
+  - 4. S.BUSの受信: arduino/SBUS.md
