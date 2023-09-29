@@ -5,12 +5,14 @@
 
 ## S.BUSとは
 UART信号を反転したものである．
+
 - 通信速度 : 100000bps
 - ストップビット : 2bit
 - パリティ : even parity
 
 ## S.BUSを受信するための回路
 S.BUS信号をUART信号に変換するためには信号を反転すればよいため，NOT回路を入れる．
+![](res/sbus.png)
 
 ## コード解説
 ### `while(Serial.available()<SBUS_LEN)`

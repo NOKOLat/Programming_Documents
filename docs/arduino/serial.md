@@ -5,6 +5,7 @@
 
 ## シリアル通信とは
 
+
 ## コード解説
 ### `void Serial.begin(unsigned long baud, byte config)`
 第1引数ではシリアル通信の通信速度を決定する．*9600*や*115200*がよく使用される．
