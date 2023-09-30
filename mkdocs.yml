@@ -54,3 +54,4 @@ nav:
   - 2. Lチカ: arduino/LED_Brink.md
   - 3. UART通信(serial): arduino/serial.md
   - 4. S.BUSの受信: arduino/SBUS.md
+- 通信: communication.md
