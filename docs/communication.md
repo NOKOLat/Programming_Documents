@@ -8,13 +8,17 @@
 **パリティビット**は通信の誤りを検出するために使用される．送信データ８bitにパリティビット (1bit) を付与し，1byteのデータの中に1が偶数個もしくは奇数個となるように調整する．
 1が偶数個となるとき*even parity*，1が奇数個となるとき*odd parity*と言う．
 
+くわしくは[ROHMのwebページ](https://www.rohm.co.jp/electronics-basics/micon/mi_what9)をご覧ください．
 ## S.BUS
 UARTにおいて設定を100000bps, even parity, 2ストップビットとし，通信信号を反転させたものをいう．
 Futabaの受信機を扱うときに，S.BUSに出会うことが多い．また，使用するときは1方向の通信であることが多い．
 NOT回路を用いて信号を反転させることでUARTとして扱うことが可能であるため，マイコンなどではNOT回路と合わせて使用される．
 
 ## I2C
+センサとマイコンやマイコン同士の通信に使用される通信方式である．データ信号の線(SDA)と信号同期のためのクロック線(SCL)の２本の線で構成されるバスにデバイスを接続する．
+I2Cの特徴は，１つのバスに複数のデバイスを接続することで任意の２デバイス間の通信が可能なことである．
 
-
+くわしくは[ROHMのwebページ](https://www.rohm.co.jp/electronics-basics/micon/mi_what7)をご覧ください．
 
 ## SPI
+くわしくは[ROHMのwebページ](https://www.rohm.co.jp/electronics-basics/micon/mi_what8)をご覧ください．
