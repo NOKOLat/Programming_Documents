@@ -68,7 +68,7 @@ void loop() {
   while(!Serial.available());
   str = Serial.readString();
   str.trim();
-  Serial.print("Received: ");
+  Serial.print("Receive : ");
   Serial.println(str);
 }
 ```
