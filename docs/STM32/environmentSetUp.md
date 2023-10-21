@@ -24,7 +24,7 @@ ST社のソフトウェアのダウンロードには名前，メールアドレ
 「Lチカ」とはLEDを点滅させることを言う．プログラミングを学んだことがあれば "Hello World" に出会ったことがあると思うが，Lチカはそれのマイコン版だと考えてほしい．
 
 ### STM32CubeIDEの起動
-![](_res/environmentBuilding/start_cubeide.avif)  
+![](_res/environmentSetUp/start_cubeide.avif)  
 1. STM32CubeIDEを起動すると，Launcherが表示される  
 2. **workspace**の選択をする
 >"workspace" とはSTM32CubeIDEで作成するプロジェクトを置く場所である．デフォルトのまま `Launch` を押して問題ない．</dd>
@@ -39,9 +39,9 @@ ST社のソフトウェアのダウンロードには名前，メールアドレ
 >   2. `Commercial Part Number`に "NUCLEO-F446RE"と入力する
 >   3. ボードを選択する
 >   4. 次へ進む
->   ![](_res/environmentBuilding/Board-select.png)
+>   ![](_res/environmentSetUp/Board-select.png)
 3. `Project Name`を入力する
->![](_res/environmentBuilding/projectName.png)
+>![](_res/environmentSetUp/projectName.png)
 
 以上で，プロジェクトの作成は終わりである．3の後でいくつかダイアログボックスが表示されることがあるが，すべて `Yes/OK` を選べば問題ない．
 
