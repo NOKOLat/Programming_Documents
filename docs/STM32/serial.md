@@ -11,7 +11,6 @@
 >   2. `Commercial Part Number`に "F446RE"と入力する
 >   3. `STM32F446RET6`を選択する
 >   4. 次へ進む
->   ![](_res/environmentSetUp/Board-select.png)
 1. `Project Name`を入力する
 > プロジェクト名は自分で分かれば何でも良いです．
 > 特にこだわりがないなら`UART`としておきましょう．
