@@ -56,4 +56,5 @@ nav:
 - STM32:
   - 1. 環境構築とLチカ: STM32/environmentSetUp.md
   - 2. UARTとツールの使い方: STM32/serial.md
+  - 3. S.BUS: STM32/SBUS.md
 - 通信: communication.md
