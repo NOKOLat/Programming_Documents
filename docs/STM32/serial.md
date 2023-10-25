@@ -1,6 +1,7 @@
 # UART（Serial通信）とツールの使い方
 ## 目標
 - STM32CubeIDEにおけるプロジェクト作成時の定形作業をできるようになる
+  - [プロジェクトの作成](#プロジェクト作成)から[Wrapperの作成](#wrapperファイルの作成)までを定形作業とする
 - HALライブラリの規則を知る
 - UARTを使えるようになる
 
@@ -33,8 +34,30 @@
 1. `Core/Inc`に`wrapper.hpp`を作る
 2. `Core/Src`に`wrapper.cpp`を作る
 
+### wrapper.hpp
+c++とc言語を繋ぐための関数のプロトタイプ宣言をしている．`extern "C" {}`で囲われた関数は内部的にc言語と同様に定義されるため，C言語のファイルから呼び出すことが可能である．基本的には，必要な機能はどのようなプロジェクトでも同じであるため，ファイルの中身はコピーして使いまわすことが多い．
+### wrapper.cpp
+Arduino環境でソースコードを書くときと同様にコードを書くファイルである．
+
+## HALライブラリの解説
+### 命名規則
+STMマイコンのプログラムで使用する関数群のことを"**HALライブラリ**(HAL)"と呼ぶ．関数の命名規則は一貫して以下に従っている．
+```
+HAL_<periferal name>_<behavior>(<periferal handler>,...);
+```
+'<periferal name>'は`UART`や`GPIO`などのマイコンの機能の名前である．  
+`<behaviot>`はどのような動作をするかを示している．例えば，通信で受信をするときには`Receive`のようになる．
+`<behaviot>`は複数のアンダーバーで区切られていることがある．
 
 
+### `HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout)`
+UARTでデータを送信するための関数である．`pData`には送信したい配列の先頭アドレスを渡す．`Size`は送信データの長さ(byte)である．
+`Timeout`で指定した時間(ms)だけ通信が終了しなかった場合に関数を終了する．`Timeout`は通信処理が上手くいかないときに処理全体がフリーズすることを防ぐためにある．
+`huart`にはペリフェラルのハンドラーのポインターを渡す．コード生成の時点でuart1であれば`huart1`のように自動で宣言されている．
+
+## 期待する動作
+本プログラムはシリアルモニタに接続した状態で起動することを想定している．  
+起動時に`Hello World`と表示され，その後，`count:<number>`と表示され<number>がカウントアップされていく．
 
 ## サンプルコード
 ### wrapper.hpp
@@ -48,8 +71,6 @@ extern "C" {
 
 void init(void);
 void loop(void);
-
-void debug();
 
 #ifdef __cplusplus
 };
