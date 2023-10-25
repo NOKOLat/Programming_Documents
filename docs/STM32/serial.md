@@ -119,4 +119,5 @@ void loop(){
   }
   /* USER CODE END 3 */
 ```
-
+## Reference
+[Sample code](https://github.com/NOKOLat/STM32Document_Serial)
