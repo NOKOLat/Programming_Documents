@@ -80,6 +80,8 @@ void loop(void);
 ```
 ### wrapper.cpp
 ```c++
+#include "wrapper.hpp"
+
 #include "usart.h"
 #include <string>
 
