@@ -92,6 +92,7 @@ void init(){
 }
 
 void loop(){
+  HAL_Delay(100);
 	static uint16_t count = 0;
 	std::string str = "count:"+std::to_string(count++)+"\n";
 	HAL_UART_Transmit(&huart2, (uint8_t *)str.c_str(),str.length(),100);
