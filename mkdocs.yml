@@ -53,6 +53,7 @@ nav:
   - 1. 環境構築: arduino/environment.md
   - 2. Lチカ: arduino/LED_Brink.md
   - 3. UART通信(serial): arduino/serial.md
+  - 4. SERVO: arduino/servo.md
 - STM32:
   - 1. 環境構築とLチカ: STM32/environmentSetUp.md
   - 2. UARTとツールの使い方: STM32/serial.md
