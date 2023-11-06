@@ -10,7 +10,7 @@ USART1(PA9, PA10)を使用する．
 ![](_res/sbus_uart_parameter.png)
 
 - DMAの有効化
-![](_res/sbus_uart_parameter.png)
+![](_res/sbus_uart_dma.png)
 
 ### シリアルモニタに出力するためのUART
 ![](_res/sbus_debugSerial.png)
