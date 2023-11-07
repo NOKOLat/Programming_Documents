@@ -49,7 +49,7 @@ void init(void){
 	HAL_Delay(1000);
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5, GPIO_PIN_RESET);
     HAL_Delay(1000);
-    HAL_UART_Receive_DMA(&huart1, sbus.getReceveBufferPtr(),sbus.getDataLen());
+    HAL_UART_Receive_DMA(&huart1, sbus.getReceiveBufferPtr(),sbus.getDataLen());
 }
 
 void loop(void){
@@ -68,7 +68,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	str = "\n";
 	HAL_UART_Transmit(&huart2, (uint8_t *)str.c_str(), str.length(), 10);
 
-	HAL_UART_Receive_DMA(&huart1, sbus.getReceveBufferPtr(),sbus.getDataLen());
+	HAL_UART_Receive_DMA(&huart1, sbus.getReceiveBufferPtr(),sbus.getDataLen());
 
 }
 ```
@@ -94,7 +94,7 @@ public:
 		return receiveBuffer.cbegin();
 	}
 
-	uint8_t *getReceveBufferPtr() {
+	uint8_t *getReceiveBufferPtr() {
 		return (uint8_t*)receiveBuffer.data();
 	}
 
