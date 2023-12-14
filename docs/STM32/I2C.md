@@ -43,6 +43,7 @@ Slaveモドでデータを受信するために使用する．
 主に，センサに設定を書き込むときに使用する．
 
 ## Source Code
+`slaveAddress`の値はCubeMXで設定した値$x$にしてください．
 ```c++
 #include "wrapper.hpp"
 
@@ -75,12 +76,12 @@ void init(void){
 void loop(void){
 #ifdef MASTER
 	std::string str = "transmit : " + std::to_string(number) + "\n";
-	HAL_I2C_Master_Transmit(&hi2c1, slaveAddress<<1, (uint8_t *)&number, sizeof(number), 100);
+	HAL_I2C_Master_Transmit(&hi2c1, slaveAddress, (uint8_t *)&number, sizeof(number), 100);
     HAL_Delay(500);
 	number += 1;
 #endif
 #ifdef SLAVE
-	HAL_I2C_Slave_Receive(&hi2c1, slaveAddress, (uint8_t *)&number, sizeof(number), 1000);
+	HAL_I2C_Slave_Receive(&hi2c1, (uint8_t *)&number, sizeof(number), 1000);
 	std::string str = "transmit : " + std::to_string(number) + "\n";
 #endif
     HAL_UART_Transmit(&huart2, (uint8_t *)str.c_str(), str.length(), 100);
