@@ -8,6 +8,8 @@ GitにはPC上に保存するローカルリポジトリと，GitHubなどのオ
 リモート上の変更をローカルにダウンロードする操作を**pull**という．
 リモートリポジトリとローカルリポジトリを比較して，ローカルに反映されていない変更がリモート上に存在するかを確認する操作を**fetch**という．
 
+Gitはコマンドで使用するほうが良いが，GUIアプリケーションも存在している．Gitに不慣れなうちはGUIアプリケーションを使うほうがわかりやすい．Windows向けなら，[soruce tree](https://www.sourcetreeapp.com/)の使用をおすすめします．
+
 ## Githubの初期設定
 ref : [Github Docs / Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
