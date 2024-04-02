@@ -27,7 +27,7 @@ void loop(){
     - LEDは出力なのでOUTPUT
     - ピンは一度決めたらそのまま使用するのでsetupに書く
 
-    **参考 esp32 miniのピン配置**
+- esp32 miniのピン配置
     ![](res/lesson1-LED/esp32pin.png)
 
     - GPIO2と書いてあるピンが使用したピン
