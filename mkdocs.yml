@@ -32,6 +32,7 @@ plugins:
   - git-revision-date-localized
 
 markdown_extensions:
+  - admonition
   - codehilite
   - pymdownx.arithmatex:
       generic: true
@@ -56,6 +57,7 @@ nav:
   - 4. SERVO: arduino/servo.md
 - ESP32:
   - 1. 環境構築: ESP32/lesson0-environment.md
+  - 2. Lチカ: ESP32/lesson1-LED.md
 - STM32:
   - 1. 環境構築とLチカ: STM32/environmentSetUp.md
   - 2. UARTとツールの使い方: STM32/serial.md
