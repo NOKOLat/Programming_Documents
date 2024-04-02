@@ -1,5 +1,14 @@
 # Lesson0 : Arduino IDEをいれよう
 
+## 0. このドキュメントの目的
+
+ArduinoIDEの環境構築とESP32(skipperW)を使用できるようになることが目的
+2024年の自操はprocessingとArduinoを使用している
+
+ESP32を使用することを目標としているが、ほかのマイコンと通じるところもあるため導入や基礎としては使用できると思う
+
+20代　海沼明日香
+
 ## 1. Arduino IDEとは
 ![](res/lesson0-environment/arduino_icon.png)
 
