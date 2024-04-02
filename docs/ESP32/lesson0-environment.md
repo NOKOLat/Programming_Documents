@@ -30,7 +30,9 @@
 1. 追加で「raspberry」と入力  
 「Arduino Mbed OS RP2040 Boards」をインストール
 ![](res/lesson0-environment/boardmaneger2.png)
-- 参考 他のインストール方法  
+
+**参考 他のインストール方法**  
+
 ボードの名前をネットで検索してURLから追加する方法もある  
 どっちでも結果は同じだが、ボードマネージャーで検索しても出てこない場合やよくわからないときは調べてURLからインストールするほうがいいかもしれない  
 
@@ -39,7 +41,7 @@
 
 1. ボードを見ると「SIL2104」と書いてあるマイコンがある
 1. 検索して
-[SILICON LABS](https://jp.silabs.com/interface/usb-bridges/classic/device.cp2104?tab=softwareandtools)アクセス
+[SILICON LABS](https://jp.silabs.com/interface/usb-bridges/classic/device.cp2104?tab=softwareandtools)にアクセス
 1. 「CP210x ユニバーサルWindows ドライバ」をインストール
 1. zipファイルを展開して中にある「UpdataParam.bat」を実行  
 
