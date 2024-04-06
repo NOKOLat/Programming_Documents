@@ -1,8 +1,8 @@
 # Lesson2 : シリアル通信を使用
 
 ## 1. シリアル通信とは
-- 一本だけの通信線でHIGH/LOWの電圧レベルを連続的に変化させて、データを送受信する通信方式
-- ボードとコンピュータなどを接続することで送受信したデータを確認することができる
+[このページ](https://nokolat.github.io/Programming_Documents/communication/#uart)
+をご覧ください
 
 ## 2.Hello World
 下のようなプログラムを書こう
@@ -51,7 +51,7 @@ void setup(){
 void loop(){
     if(Serial.available() > 0){
         int data = Serial.read();
-        Serial.println(data, DEC);//DECは10進数で表すという意味
+        Serial.println(data, DEC);
     }
 }
 ```
@@ -72,24 +72,22 @@ void loop(){
 - シリアルモニタの入力画面で「a」と打ってenter
 ![](res/lesson2-serial/inputserial.png)
 
+### 実行結果
 - 「a」ではなく「97」「10」とでてきてしまう
 ![](res/lesson2-serial/outputserial.png)
-
-### 実行結果
-
-- シリアルモニタに永遠とHello Worldが表示される
-![](res/lesson2-serial/result-HelloWorld.png)
 
 ### ASCIIコード
 
 - Serial.printはASCIIコードとして処理している
-- ASCIIコードとはアルファベットや記号が0 ~ 127の数字で表されるコード
+- ASCIIコードとはアルファベットや記をが0 ~ 127の数字で表す
 ([ASCIIコード表](https://www3.nit.ac.jp/~tamura/ex2/ascii.html))
-- 「a」はASCIIコードでは「97」、「改行(LF)」は「10」で表されるため、あのような出力になった
+- 例えば「"a"」はASCIIコードでは「97」、「"\n"(改行)」は「10」で表される
+- Serial.print(data, DED);は入力されたデータを10進数の数字としてASCIIコードに変換し送信する
+    - data = "a"; のとき"a"はASCIIコードで10であるから送信されるデータは"10"(文字列)となる
+- Serial.print(data); は入力されたデータをそのまま送信する
 - 「Hello World」が正しく出力されたのは、Serial.printでは文字列はそのまま扱われるから
-- 入力した文字をそのまま表示するためにはSerial.read()で受信した数値をchar型の変数に入れればよい（そもそも元々はint型に代入していたので文字が表示されるわけがない）
 
-- int data → char data, Serial.print(data, DEC); → Serial.print(data);に書き換えよう
+- ```Serial.print(data, DEC);``` を```Serial.print(data);``` に書き換えて実行してみよう
 
 ### 実行しよう
 - シリアルモニタの入力画面で「a」と打ってenter
@@ -100,8 +98,9 @@ void loop(){
 - ちゃんと「a」と出力されました
 ![](res/lesson2-serial/correct-outputserial.png)
 
-**Serial.printとASCIIコードについてやりました。同じ文字を送っているのに表示が違うのはややこしいかもしれませんがシリアル通信は今後もよく使うので頑張りましょう**
+## まとめ
+Serial.printとASCIIコードについてやりました。同じ文字を送っているのに表示が違うのはややこしいかもしれませんがシリアル通信は今後もよく使うので頑張りましょう
 
-**次回はセンサーを使います！**
+次回はセンサーを使います！
 
-**加速度や気圧などの値を見ることができます！**
+加速度や気圧などの値を見ることができます！
