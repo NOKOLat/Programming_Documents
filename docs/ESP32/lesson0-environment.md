@@ -31,14 +31,11 @@ ESP32を使用することを目標としているが、ほかのマイコンと
 - 使用するためにはボードを選択する必要がある
 - ボードはボードマネージャーなどから自分でインストールする
 - 自操班が使用しているのはESP32
-- 講座ではraspberry pi picoも使用する
+
 ### ボードのインストール
 1. ボードマネージャーを開いて「esp32」と入力  
-二つ出てくるので両方インストールする
+出てくるので「esp32 by Espressif Systems」をインストール
 ![](res/lesson0-environment/boardmaneger.png)
-1. 追加で「raspberry」と入力  
-「Arduino Mbed OS RP2040 Boards」をインストール
-![](res/lesson0-environment/boardmaneger2.png)
 
 !!! Note
     **参考 他のインストール方法**  
