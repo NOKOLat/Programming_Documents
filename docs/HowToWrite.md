@@ -14,9 +14,7 @@
    ターミナルもしくはSourceTreeのようなGUIツールから設定できる
     - `git flow init`コマンドを使用する  
     - GUIツールのGit Flowボタンを押す
-4. mkdocsをインストールする  
-    `pip install mkdocs`
-5. mkdocsに必要なpythonライブラリをインストールする  
+4. mkdocsに必要なpythonライブラリをインストールする  
    `pip install -r ./requirements.txt`
 
 ## 新規ページの作成
