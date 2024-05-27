@@ -38,7 +38,6 @@ void loop() {
 - Servo servotest;
     - Servo サーボの名前;
     - 使用するサーボに名前を付けて変数のように宣言する
-    - 受信していないときは0を返す
 - servotest.attach(5);
     - サーボ名.attach(ピン番号);
     - サーボに使用するピンを指定する
