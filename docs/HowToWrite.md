@@ -14,6 +14,23 @@
    ターミナルもしくはSourceTreeのようなGUIツールから設定できる
     - `git flow init`コマンドを使用する  
     - GUIツールのGit Flowボタンを押す
+```
+*/Programing_DOcuments$ git flow init
+
+Which branch should be used for bringing forth production releases? 
+- master
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [F:/tmp/Programming_Documents/.git/hooks]
+```
 4. mkdocsに必要なpythonライブラリをインストールする  
    `pip install -r ./requirements.txt`
 
