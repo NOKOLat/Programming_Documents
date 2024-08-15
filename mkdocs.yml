@@ -65,6 +65,7 @@ nav:
   - 4. SERVO: STM32/servo.md
   - 5. I2C: STM32/I2C.md
   - Ex. 課題: STM32/works.md
+  - 6. SPI: STM32/SPI.md
 - 通信: communication.md
 - Git: Git.md
 - TeraTerm: TeraTerm.md
