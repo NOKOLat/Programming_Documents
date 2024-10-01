@@ -66,6 +66,7 @@ nav:
   - 5. I2C: STM32/I2C.md
   - Ex. 課題: STM32/works.md
   - 6. SPI: STM32/SPI.md
+  - 7. USBメモリ: STM32/USBMemory.md
 - 通信: communication.md
 - Git: Git.md
 - TeraTerm: TeraTerm.md
