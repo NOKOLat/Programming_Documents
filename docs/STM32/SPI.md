@@ -7,7 +7,7 @@ SPI通信の解説については[こちら](../../communication/)をご覧く�
 >ConnectivityからSPI2を選択し，Masterとする場合はFull-Duplex Masterとし，Slaveとする場合はFull-Duplex Slaveとする．
 >![](_res/SPI_Config.png)
 
-## 期待する動作
+## 期待される動作
 マイコンが動作開始すると同時にLEDが1秒間点灯する．その後，書き込まれているプログラムがMasterかSlaveかをシリアルで送信する．  
 Masterモードではuint16_t型の変数をカウントアップしながらI2Cで送信する．また，シリアルでも値が送信される．  
 SlaveモードではI2Cで受信した値をシリアルで送信する．  
