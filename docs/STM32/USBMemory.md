@@ -88,14 +88,39 @@ C言語の`f_close()`とほとんど同じ．
 /* USER CODE END Includes */
 ```
 
-### USBH_UserProcess()
+### USBH_UserProcess
 `USBH_UserProcess`は`USb_Host/App/usb_host.c`の116行目にある．
-fatfs.hによって導入される関数の引数(FATFS型の構造体やFIL型の構造体など)はfatfs.hで定義されている
+`fatfs.h`によって導入される関数の引数(FATFS型の構造体やFIL型の構造体など)は`fatfs.h`で定義されている
 ```c++
-f_mount(&USBHFatFS, (TCHAR *)USBHPath, 0);
-f_open(&USBHFile, "test.txt", FA_CREATE_ALWAYS | FA_WRITE);
-char text[]="You succeeded in writing text on USB-Memory\n";
-f_write(&USBHFile, text, sizeof(text), (void *)&byteswritten);
-f_close(&USBHFile);
-HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+static void USBH_UserProcess  (USBH_HandleTypeDef *phost, uint8_t id)
+{
+  /* USER CODE BEGIN CALL_BACK_1 */
+  switch(id)
+  {
+  case HOST_USER_SELECT_CONFIGURATION:
+  break;
+
+  case HOST_USER_DISCONNECTION:
+  Appli_state = APPLICATION_DISCONNECT;
+  break;
+
+  case HOST_USER_CLASS_ACTIVE:
+  Appli_state = APPLICATION_READY;
+  f_mount(&USBHFatFS, (TCHAR *)USBHPath, 0);
+  f_open(&USBHFile, "test.txt", FA_CREATE_ALWAYS | FA_WRITE);
+  char text[]="You succeeded in writing text on USB-Memory\n";
+  f_write(&USBHFile, text, sizeof(text), (void *)&byteswritten);
+  f_close(&USBHFile);
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin,GPIO_PIN_SET);
+  break;
+
+  case HOST_USER_CONNECTION:
+  Appli_state = APPLICATION_START;
+  break;
+
+  default:
+  break;
+  }
+  /* USER CODE END CALL_BACK_1 */
+}
 ```
