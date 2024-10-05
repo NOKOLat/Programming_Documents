@@ -35,7 +35,8 @@ USBメモリに書き込みたい内容の文章が書き込まれていたら�
 
 ## マイコンとUSB端子の接続
 - USBのメス端子の`D+`にマイコンの`USB_OTG_FS_DP`を`D-`に`USB_OTG_FS_DM`を接続
-- USBのメス端子のVbusには5Vを供給
+- USBのメス端子の`Vbus`には5Vを供給
+- USBのメス端子のGNDにはグランドを接続
 
 ## プログラミング
 今回は`wrapper.hpp`や`wrapper.cpp`は作らない．
