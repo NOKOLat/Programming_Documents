@@ -6,27 +6,28 @@
 ## CubeMXの設定
 1. 使用するピンを選択する
 >今回は`PA11`を`USB_OTG_FS_DM`に，`PA12`を`USB_OTG_FS_DP`に設定する
->![](_res\USB_Pinout.png)
+>![](_res/USB_Pinout.png)
 
 2. USB_OTG_FSの設定
 >`mode`を`Host_Only`にする
->![](_res\USB_OTG_FS_Config.png)
+>![](_res/USB_OTG_FS_Config.png)
 
 3. USB_HOSTの有効化と設定
 >`Middleware and Software Packs`から`USB_HOST`を選択
 >`Class for FS IP`を`Mass Storage Host Class`に設定
 >`Platform Settings`の`IPs or Compornents`を`GPIO Output`に設定
 >`Platform Settings`の`Found Solutions`を`PA5`に設定
->![](_res\USB_Host_Config.png)
+>![](_res/USB_Host_Config.png)
 
 4. FATFSの有効化と設定
 >`mode`は`USB Disk`を選択
 >`Set Defines`の`Physical Drive Parameters`にある`MAX_SS`を`4096`に`MIN_SS`を`512`にする
->![](_res\FATFS_Config.png)
+>![](_res/FATFS_Config.png)
 
 5. Clock周りの問題解決
 >`Clock Configuration`を開くとエラーメッセージが出るのでYesを選択
 >`Resolve Clock issues`を実行
+>![](_res/USB_ClockIssueSolve.png)
 
 ## 期待される動作
 USBメモリを挿した後しばらくしてからLEDが点灯する．
