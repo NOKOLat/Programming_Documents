@@ -10,7 +10,6 @@ USBメモリ(初級編)に加えて`System Core`の`NVIC`で`EXTI line[15:10] in
 
 ## プログラミング
 
-
 ## サンプルコード
 ### USBH_UserProcess
 ```c++
@@ -55,18 +54,14 @@ static void USBH_UserProcess  (USBH_HandleTypeDef *phost, uint8_t id)
 #include <usb_host.h>
 #include "WRAPPER.hpp"
 
-uint8_t pushCount=0x30;
+uint16_t pushCount=0;
 uint8_t pushFlg=0;
-char insertText[2];
 UINT bw;
 
 void loop(void){
 	if(pushFlg){
-		insertText[0]=pushCount;
-	   	insertText[1]='\n';
-	   	f_open(&USBHFile, "/test.txt", FA_OPEN_APPEND|FA_WRITE);
-	   	f_write(&USBHFile, &insertText, sizeof(insertText), &bw);
-	    f_close(&USBHFile);
+		f_printf(&USBHFile, "%u",pushCount);
+	   	f_sync(&USBHFile);
        	pushFlg--;
 	}
 }
@@ -75,4 +70,24 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	pushCount++;
 	pushFlg++;
 }
+
+```
+
+### main.c
+```c++
+ /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+    MX_USB_HOST_Process();
+
+    /* USER CODE BEGIN 3 */
+    loop();
+  }
+  /* USER CODE END 3 */
 ```

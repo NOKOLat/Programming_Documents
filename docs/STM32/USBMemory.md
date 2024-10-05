@@ -61,11 +61,18 @@ C言語の`f_open()`とほとんど同じ．
 第3引数のモードの指定はC言語と若干異なるので[こちら](http://elm-chan.org/fsw/ff/doc/open.html)の表を参照
 
 ### `f_write(FIL* fp, const void* buff, UINT btw, UINT* bw)`
-C言語の`f_write()`とほとんど同じ．
+ファイルに文字を書きこむ関数．
 
 第3引数で書きこむデータのサイズを渡す．
 
 第4引数で書き込んだ文字数を記録するための関数のポインタを渡す．
+
+char型のものしか送れないので若干不便なので次に紹介する`f_printf()`を使うことを推奨する．
+
+### int f_printf (FIL* fp, const TCHAR* str, ...)
+C言語のfprintf()とほとんど同じ．
+
+f_writeだと送れないint型の変数の持つ値やfloat型の変数の持つ値を送れるので便利．
 
 ### `f_close(FIL* fp)`
 C言語の`f_close()`とほとんど同じ．
