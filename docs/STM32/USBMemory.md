@@ -15,8 +15,7 @@
 3. USB_HOSTの有効化と設定
 >`Middleware and Software Packs`から`USB_HOST`を選択
 >`Class for FS IP`を`Mass Storage Host Class`に設定
->`Platform Settings`の`IPs or Compornents`を`GPIO Output`に設定
->`Platform Settings`の`Found Solutions`を`PA5`に設定
+>`NO_SW_VBUS_DRIVE_FS`にチェックを入れる
 >![](_res/USB_Host_Config.png)
 
 4. FATFSの有効化と設定
