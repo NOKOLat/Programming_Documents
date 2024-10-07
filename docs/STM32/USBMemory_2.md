@@ -66,13 +66,13 @@ void loop(void){
 	if(pushFlg){
 		f_printf(&USBHFile, "%u",pushCount);
 	   	f_sync(&USBHFile);
-       	pushFlg--;
+       	pushFlg=0;
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	pushCount++;
-	pushFlg++;
+	pushFlg=1;
 }
 
 ```
