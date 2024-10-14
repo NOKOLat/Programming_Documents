@@ -6,27 +6,27 @@
 ## CubeMXの設定
 1. 使用するピンを選択する
 >今回は`PA11`を`USB_OTG_FS_DM`に，`PA12`を`USB_OTG_FS_DP`に設定する
->![](_res\USB_Pinout.png)
+>![](_res/USB_Pinout.png)
 
 2. USB_OTG_FSの設定
 >`mode`を`Host_Only`にする
->![](_res\USB_OTG_FS_Config.png)
+>![](_res/USB_OTG_FS_Config.png)
 
 3. USB_HOSTの有効化と設定
 >`Middleware and Software Packs`から`USB_HOST`を選択
 >`Class for FS IP`を`Mass Storage Host Class`に設定
->`Platform Settings`の`IPs or Compornents`を`GPIO Output`に設定
->`Platform Settings`の`Found Solutions`を`PA5`に設定
->![](_res\USB_Host_Config.png)
+>`NO_SW_VBUS_DRIVE_FS`にチェックを入れる
+>![](_res/USB_Host_Config.png)
 
 4. FATFSの有効化と設定
 >`mode`は`USB Disk`を選択
 >`Set Defines`の`Physical Drive Parameters`にある`MAX_SS`を`4096`に`MIN_SS`を`512`にする
->![](_res\FATFS_Config.png)
+>![](_res/FATFS_Config.png)
 
 5. Clock周りの問題解決
 >`Clock Configuration`を開くとエラーメッセージが出るのでYesを選択
 >`Resolve Clock issues`を実行
+>![](_res/USB_ClockIssueSolve.png)
 
 ## 期待される動作
 USBメモリを挿した後しばらくしてからLEDが点灯する．
@@ -88,14 +88,39 @@ C言語の`f_close()`とほとんど同じ．
 /* USER CODE END Includes */
 ```
 
-### USBH_UserProcess()
+### USBH_UserProcess
 `USBH_UserProcess`は`USb_Host/App/usb_host.c`の116行目にある．
-fatfs.hによって導入される関数の引数(FATFS型の構造体やFIL型の構造体など)はfatfs.hで定義されている
+`fatfs.h`によって導入される関数の引数(FATFS型の構造体やFIL型の構造体など)は`fatfs.h`で定義されている
 ```c++
-f_mount(&USBHFatFS, (TCHAR *)USBHPath, 0);
-f_open(&USBHFile, "test.txt", FA_CREATE_ALWAYS | FA_WRITE);
-char text[]="You succeeded in writing text on USB-Memory\n";
-f_write(&USBHFile, text, sizeof(text), (void *)&byteswritten);
-f_close(&USBHFile);
-HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+static void USBH_UserProcess  (USBH_HandleTypeDef *phost, uint8_t id)
+{
+  /* USER CODE BEGIN CALL_BACK_1 */
+  switch(id)
+  {
+  case HOST_USER_SELECT_CONFIGURATION:
+  break;
+
+  case HOST_USER_DISCONNECTION:
+  Appli_state = APPLICATION_DISCONNECT;
+  break;
+
+  case HOST_USER_CLASS_ACTIVE:
+  Appli_state = APPLICATION_READY;
+  f_mount(&USBHFatFS, (TCHAR *)USBHPath, 0);
+  f_open(&USBHFile, "test.txt", FA_CREATE_ALWAYS | FA_WRITE);
+  char text[]="You succeeded in writing text on USB-Memory\n";
+  f_write(&USBHFile, text, sizeof(text), (void *)&byteswritten);
+  f_close(&USBHFile);
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin,GPIO_PIN_SET);
+  break;
+
+  case HOST_USER_CONNECTION:
+  Appli_state = APPLICATION_START;
+  break;
+
+  default:
+  break;
+  }
+  /* USER CODE END CALL_BACK_1 */
+}
 ```
