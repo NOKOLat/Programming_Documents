@@ -47,6 +47,7 @@
 ![](res/lesson3-sensor/rawdata.png)
 
 ### 値調整
+- float get_acce_resolution();とfloat get_gyro_resolution();を表示前に実行
 - MPU6050では加速度を16384,角速度を131で割るといい感じの値になる
 - 加速度の単位がg,角速度はdegree per second
 ![](res/lesson3-sensor/fixdata.png)
