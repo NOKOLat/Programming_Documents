@@ -6,7 +6,7 @@ Windows向けにGitの環境構築とGitHubをSSHで使用するための初期�
 ## What is git and github?
 Gitはバージョン管理システムの1つであり，プログラムのバージョン管理に広く使用されている．
 GitHubはGitをオンラインで使用するためのサービスでもっとも有名なものの1つである．
-多くのオープンソースプロジェクトがGitHubを使用している．NOKOlatでも2023年くらいから，GitHubを使用している．
+多くのオープンソースプロジェクトがGitHubを使用している．NoKoLATでも2023年くらいから，GitHubを使用している．
 
 ## Install "Git for Windows"
 [リンク](https://gitforwindows.org/)よりGit for windowsのインストーラーをダウンロードし，Git for windowsをインストールしてください．オプションはすべてデフォルト値で問題ありません．
