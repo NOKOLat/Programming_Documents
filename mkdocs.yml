@@ -56,15 +56,21 @@ nav:
   - 3. UART通信(serial): arduino/serial.md
   - 4. SERVO: arduino/servo.md
 - ESP32:
-  - 1. 環境構築: ESP32/lesson0-environment.md
-  - 2. Lチカ: ESP32/lesson1-LED.md
+  - 0. 環境構築: ESP32/lesson0-environment.md
+  - 1. Lチカ: ESP32/lesson1-LED.md
+  - 2. シリアル通信: ESP32/lesson2-serial.md
+  - 3. センサー: ESP32/lesson3-sensor.md
 - STM32:
   - 1. 環境構築とLチカ: STM32/environmentSetUp.md
   - 2. UARTとツールの使い方: STM32/serial.md
   - 3. S.BUS: STM32/SBUS.md
   - 4. SERVO: STM32/servo.md
   - 5. I2C: STM32/I2C.md
+  - 6. SPI: STM32/SPI.md
+  - 7. USBメモリ: STM32/USBMemory.md
   - Ex. 課題: STM32/works.md
 - 通信: communication.md
 - Git: Git.md
 - TeraTerm: TeraTerm.md
+- ドキュメントの書き方: HowToWrite.md
+

@@ -1,5 +1,14 @@
 # Lesson0 : Arduino IDEをいれよう
 
+## 0. このドキュメントの目的
+
+ArduinoIDEの環境構築とESP32(skipperW)を使用できるようになることが目的
+2024年の自操はprocessingとArduinoを使用している
+
+ESP32を使用することを目標としているが、ほかのマイコンと通じるところもあるため導入や基礎としては使用できると思う
+
+20代　海沼明日香
+
 ## 1. Arduino IDEとは
 ![](res/lesson0-environment/arduino_icon.png)
 
@@ -22,14 +31,11 @@
 - 使用するためにはボードを選択する必要がある
 - ボードはボードマネージャーなどから自分でインストールする
 - 自操班が使用しているのはESP32
-- 講座ではraspberry pi picoも使用する
+
 ### ボードのインストール
 1. ボードマネージャーを開いて「esp32」と入力  
-二つ出てくるので両方インストールする
+出てくるので「esp32 by Espressif Systems」をインストール
 ![](res/lesson0-environment/boardmaneger.png)
-1. 追加で「raspberry」と入力  
-「Arduino Mbed OS RP2040 Boards」をインストール
-![](res/lesson0-environment/boardmaneger2.png)
 
 !!! Note
     **参考 他のインストール方法**  
@@ -48,5 +54,6 @@
 ボードやドライバのインストールは今後違う種類のマイコンやボードを使用するときにもする必要が出てくると思います  
 その時も今回のように検索をして目的に合ったものをインストールしましょう
 
-**これでArduino IDEでESP32, raspberry pi picoを使用するための環境が整いました！  
-次回からは実際にマイコンを使っていきます!**
+## まとめ
+これでArduino IDEでESP32を使用するための環境が整いました！  
+次回からは実際にマイコンを使っていきます!
