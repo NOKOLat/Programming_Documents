@@ -70,6 +70,8 @@ nav:
   - 7. USBメモリ: STM32/USBMemory.md
   - Ex. 課題: STM32/works.md
 - 通信: communication.md
-- Git: Git.md
+- Git: 
+  - Gitとは : Git/Git.md
+  - Setup Git and GitHub : Git/setupGitAndGithub.md
 - TeraTerm: TeraTerm.md
 - ドキュメントの書き方: HowToWrite.md
