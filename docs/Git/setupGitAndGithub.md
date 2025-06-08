@@ -14,7 +14,7 @@ GitHubはGitをオンラインで使用するためのサービスでもっと�
 ref : [https://qiita.com/takeru-hirai/items/4fbe6593d42f9a844b1c](https://qiita.com/takeru-hirai/items/4fbe6593d42f9a844b1c)
 ## Prepare SSH Key
 1. .sshディレクトリに移動する  
- `cd C:\Users\your_account_name\.ssh`を実行して.sshに移動する  
+ `cd ~\.ssh`を実行して.sshに移動する  
  `your_account_name`は人によって異なるので，自分の環境で確認する
  .sshフォルダが存在しない場合は作成する
 1. SSH keyの生成  
@@ -51,7 +51,7 @@ ref : [https://qiita.com/takeru-hirai/items/4fbe6593d42f9a844b1c](https://qiita.
  <pre><code>
 Host github github.com
   HostName github.com
-  IdentityFile c:/Users/conat/.ssh/github
+  IdentityFile ~/.ssh/github
   User git
  </code></pre>
 ## Register SSH key on GitHub
