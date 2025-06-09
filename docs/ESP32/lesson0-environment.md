@@ -3,18 +3,19 @@
 ## 0. このドキュメントの目的
 
 ArduinoIDEの環境構築とESP32(skipperW)を使用できるようになることが目的
+
 2024年の自操はprocessingとArduinoを使用している
 
 ESP32を使用することを目標としているが、ほかのマイコンと通じるところもあるため導入や基礎としては使用できると思う
 
-20代　海沼明日香
+2024　自操K班 班長
 
 ## 1. Arduino IDEとは
 ![](res/lesson0-environment/arduino_icon.png)
 
 - マイコンを動かすためのソフトウェアを開発するために作られた総合開発環境
 - ArduinoはC++ベースのプログラミング言語
-- 様々なマイコンやコンデンサーを簡単に使用できる
+- 様々なマイコンやライブラリを簡単に使用できる
 
 ## 2.Arduino IDEをインストールしよう
 1. [Arduino IDEのダウンロードページ](https://www.arduino.cc/en/software)

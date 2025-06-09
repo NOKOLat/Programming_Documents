@@ -60,6 +60,7 @@ nav:
   - 1. Lチカ: ESP32/lesson1-LED.md
   - 2. シリアル通信: ESP32/lesson2-serial.md
   - 3. センサー: ESP32/lesson3-sensor.md
+  - 4. サーボ: ESP32/lesson4-servo.md
 - STM32:
   - 1. 環境構築とLチカ: STM32/environmentSetUp.md
   - 2. UARTとツールの使い方: STM32/serial.md
