@@ -9,7 +9,12 @@ GitHubはGitをオンラインで使用するためのサービスでもっと�
 多くのオープンソースプロジェクトがGitHubを使用している．NoKoLATでも2023年くらいから，GitHubを使用している．
 
 ## Install "Git for Windows"
-[リンク](https://gitforwindows.org/)よりGit for windowsのインストーラーをダウンロードし，Git for windowsをインストールしてください．オプションはすべてデフォルト値で問題ありません．
+[リンク](https://gitforwindows.org/)よりGit for windowsのインストーラーをダウンロードし，Git for windowsをインストールしてください．
+デフォルトの設定では，ユーザーフォルダーがアスキーコードで表現できない場合にssh接続でエラーが発生します．
+インストール時の**Choosing the SSH executable**で**Use External OpenSSH**を選択してください．
+その他の項目についてはデフォルト値で問題ありません．
+
+![](./res/git4windows_SSH.png)
 
 ref : [https://qiita.com/takeru-hirai/items/4fbe6593d42f9a844b1c](https://qiita.com/takeru-hirai/items/4fbe6593d42f9a844b1c)
 ## Prepare SSH Key
