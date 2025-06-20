@@ -9,7 +9,7 @@
 ## 2.ライブラリのインストール
 1. 「esp32 servo library」と検索して[githubのサイト](https://github.com/jkb-git/ESP32Servo)にアクセスしよう
 1. 「code→download zip」でライブラリのzipファイルをダウンロード
-1. [zipファイルのライブラリをインストールする方法](lessson3のurl)でライブラリをインストールしよう 
+1. [zipファイルのライブラリをインストールする方法](lesson3-sensor.md)でライブラリをインストールしよう 
 
 **これでサーボを使う準備ができました！**
 
