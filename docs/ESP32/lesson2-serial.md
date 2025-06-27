@@ -35,7 +35,6 @@ void loop(){
 ![](res/lesson2-serial/setup-baud.png)
 
 ### 実行結果
-
 - シリアルモニタに永遠とHello Worldが表示される
 ![](res/lesson2-serial/result-HelloWorld.png)
 
@@ -58,13 +57,11 @@ void loop(){
 
 ### コードの説明
 - if(Serial.available() > 0){};
-
     - Serial.availableはシリアルを受信したときに受信したバイト数を返す関数（64 byteまで格納可能）
     - 受け取ると値が一つずつ減り受信したデータがなくなると0になる
     - 受信していないときは0を返す
 
 - Serial.read();
-
     - Serial.read()は受信したデータを読み込む関数
     - 1 byteだけ読み込む
 
@@ -77,7 +74,6 @@ void loop(){
 ![](res/lesson2-serial/outputserial.png)
 
 ### ASCIIコード
-
 - Serial.printはASCIIコードとして処理している
 - ASCIIコードとはアルファベットや記をが0 ~ 127の数字で表す
 ([ASCIIコード表](https://www3.nit.ac.jp/~tamura/ex2/ascii.html))
@@ -87,16 +83,19 @@ void loop(){
 - Serial.print(data); は入力されたデータをそのまま送信する
 - 「Hello World」が正しく出力されたのは、Serial.printでは文字列はそのまま扱われるから
 
-- ```Serial.print(data, DEC);``` を```Serial.print(data);``` に書き換えて実行してみよう
+- ```Serial.print(data, DEC);``` を```Serial.write(data);``` に書き換えて実行してみよう
 
 ### 実行しよう
 - シリアルモニタの入力画面で「a」と打ってenter
 ![](res/lesson2-serial/inputserial.png)
 
 ### 実行結果
-
 - ちゃんと「a」と出力されました
 ![](res/lesson2-serial/correct-outputserial.png)
+
+### コードの説明
+- Serial.write();
+    - Serial.read();でバイトに変換されたものをもう一度文字に変換する関数
 
 ## まとめ
 Serial.printとASCIIコードについてやりました。同じ文字を送っているのに表示が違うのはややこしいかもしれませんがシリアル通信は今後もよく使うので頑張りましょう
