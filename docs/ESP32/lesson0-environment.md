@@ -50,7 +50,12 @@ ESP32を使用することを目標としているが、ほかのマイコンと
 1. 検索して
 [SILICON LABS](https://jp.silabs.com/interface/usb-bridges/classic/device.cp2104?tab=softwareandtools)にアクセス
 1. 「CP210x ユニバーサルWindows ドライバ」をインストール
-1. zipファイルを展開して中にある「UpdataParam.bat」を実行  
+1. デバイスマネージャーを開く(Windowsキーを押して「device」と入力すると出てくる)
+1. 赤い四角で囲われている名前のデバイスを探す
+![](res/lesson0-environment/CP2104.png)
+1. 右クリックして「ドライバーの更新」をクリック
+1. 上の「コンピューターを参照してドライバーを検索」を選択
+1. 「CP210x_Universal_Windows_Driver」のフォルダーを選択
 
 ボードやドライバのインストールは今後違う種類のマイコンやボードを使用するときにもする必要が出てくると思います  
 その時も今回のように検索をして目的に合ったものをインストールしましょう
